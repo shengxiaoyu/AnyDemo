@@ -1,5 +1,3 @@
 # AnyDemo
 some practice:
-algorithms
-reading demo
-Utils
+algorithms,reading demo,Utils
