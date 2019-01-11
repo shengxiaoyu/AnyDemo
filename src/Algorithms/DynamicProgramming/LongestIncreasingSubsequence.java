@@ -7,26 +7,29 @@ package Algorithms.DynamicProgramming;
  * @Description
  */
 public class LongestIncreasingSubsequence {
-    public static int[] f(int [] arr){
-        int[] result = new int[arr.length] ;
-        int len = -1 ;
-        for(int i=0;i<arr.length;i++){
-            int[] tmp = new int[arr.length] ;
-            int len_tmp = 0 ;
-            tmp[0]=arr[i] ;
-            len_tmp++ ;
-            int index = 0;
-            for(int j=i+1;j<arr.length;j++){
-                if(arr[j]>tmp[index]){
-                    tmp[++index] = arr[j] ;
-                    len_tmp++ ;
+    public static void main(String[] args) {
+        int[] arr = {1,3,6,7,9,4,10,5,6} ;
+        System.out.println(f(arr));
+    }
+    public static int f(int [] arr){
+        if(arr.length<2){
+            return arr.length ;
+        }
+        int[] result = new int[arr.length+1] ;
+        for(int i=1;i<arr.length+1;i++){
+            result[i] = 1 ;
+            for(int j=1;j<i;j++){
+                if(arr[j-1]<arr[i-1]){
+                    result[i] = Math.max(result[i],1+result[j]) ;
                 }
             }
-            if(len_tmp>len){
-                result = tmp ;
-                len = len_tmp ;
+        }
+        int max = result[0] ;
+        for(int tmp:result){
+            if(tmp>max){
+                max = tmp ;
             }
         }
-        return result ;
+        return max ;
     }
 }
