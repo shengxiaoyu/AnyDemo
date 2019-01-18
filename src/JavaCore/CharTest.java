@@ -1,3 +1,5 @@
+package JavaCore;
+
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -12,7 +14,7 @@ import java.util.Map;
 public class CharTest {
     public static void main(String[] args) {
 
-        Arrays.asList(new String[]{"A","B","中","文"})
+        Arrays.asList(new String[]{"JavaCore.A","JavaCore.B","中","文"})
                 .forEach(str->{
                     System.out.println(Character.codePointAt(str.toCharArray(),0));
                 });

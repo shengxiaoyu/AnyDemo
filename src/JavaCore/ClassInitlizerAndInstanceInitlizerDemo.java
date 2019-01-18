@@ -1,3 +1,5 @@
+package JavaCore;
+
 /**
  * @author 13314409603@163.com
  * @date 2018/12/15

@@ -14,9 +14,20 @@ public class Manager extends Employee {
         return bonus ;
     }
 
+    public Manager(){
+        super();
+    }
     public Manager(String aName,int aBonus){
         super(aName);
         bonus = aBonus ;
+    }
+
+    /**
+     * 不是覆盖，覆盖方法参数不可变
+     * @param aInt
+     */
+    public void print(Integer aInt){
+        System.out.println(aInt);
     }
     @Override
     public boolean equals(Object otherObject){

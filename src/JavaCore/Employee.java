@@ -1,5 +1,6 @@
 package JavaCore;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -8,16 +9,19 @@ import java.util.Objects;
  * @time 11:01
  * @Description
  */
-public class Employee implements Cloneable{
+public class Employee implements Cloneable,Comparable,Serializable{
     protected String name ;
 
+    public Employee(){}
     public Employee(String aName){
         name = aName ;
     }
     public String getName(){
         return name ;
     }
-
+    public void print(Number number){
+        System.out.println(number);
+    }
     @Override
     public boolean equals(Object otherObject){
         if(this == otherObject){
@@ -36,5 +40,10 @@ public class Employee implements Cloneable{
     @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
