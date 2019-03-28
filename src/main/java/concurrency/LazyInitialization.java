@@ -25,7 +25,7 @@ class Resource {
         System.out.println("init resource");
     }
 }
-//unsafe
+//safe
 class SafeLazyInitialization {
     private static Resource resource ;
     public synchronized static Resource getInstance(){
@@ -35,7 +35,7 @@ class SafeLazyInitialization {
         return resource ;
     }
 }
-class SafeLazyInitialization2{
+class SafeLazyInitialization2{//Resourceå¿…é¡»ä¸å¯å˜ï¼Œä¸ç„¶ä¸å®‰å…¨å‘å¸ƒ
     private static Resource resource = new Resource() ;
     public static Resource getResource(){return resource ;}
 }
@@ -51,12 +51,12 @@ class UnsafeLazyInitialization{
 }
 //unsafe
 class DoubleCheckedLocking{
-    private static Resource resource ; //Èç¹ûÕâ¸ö¼ÓÉÏvolatile¾ÍÊÇ°²È«µÄÁË£¿
+    private static Resource resource ; //å¦‚æœè¿™ä¸ªåŠ ä¸Švolatileå°±æ˜¯å®‰å…¨çš„äº†
     public static Resource getInstance(){
         if(resource == null){
             synchronized (DoubleCheckedLocking.class){
                 if(resource==null){
-                    resource = new Resource() ; //²»°²È«·¢²¼
+                    resource = new Resource() ; //ä¸å®‰å…¨å‘å¸ƒ
                 }
             }
         }

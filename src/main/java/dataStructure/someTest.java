@@ -22,6 +22,7 @@ public class someTest {
 //        LinkedHashMap<String,Integer> lhm = new LinkedHashMap();
 //        lhm.put("1",1) ;
 //        AtomicInteger integer = new AtomicInteger(1) ;
+        String s = "asd" ;
         ConcurrentHashMap cjm = new ConcurrentHashMap() ;
         ReentrantLock lock = new ReentrantLock() ;
         lock.lock();
