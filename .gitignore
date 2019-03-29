@@ -1,6 +1,6 @@
 /target/
 /log/
-/data/
+/plain.data/
 /temp/
 /out/
 !.mvn/wrapper/maven-wrapper.jar

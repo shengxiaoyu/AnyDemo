@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="plain"/>
+
+    <context:annotation-config></context:annotation-config>
+    <bean id="car" class="plain.Spring.Car">
+        <property name="maxSpeed" value="200"></property>
+        <property name="name" value="拓扑"></property>
+        <property name="value" value="120"></property>
+    </bean>
+
+    <bean id="price" class="plain.Spring.Price">
+        <!--<constructor-arg index="0" type="java.lang.String" value="元"></constructor-arg>-->
+        <!--<constructor-arg index="1" type="java.lang.Double" value="120"></constructor-arg>-->
+        <constructor-arg name="number" value="120"/>
+        <constructor-arg name="unit" value="元"/>
+    </bean>
+</beans>
