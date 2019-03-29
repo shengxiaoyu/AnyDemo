@@ -24,7 +24,6 @@ public class SimpleTask extends Task {
         if (kilim.tools.Kilim.trampoline(false,args)) {//检查并织入增强
             return;
         }
-        Arrays.binarySearch()
         new SimpleTask().start() ;
         Thread.sleep(10);
         mb.putnb("Hello ") ;
