@@ -10,6 +10,6 @@ import java.util.Queue;
  */
 public class _5 {
     public static void main(String[] args) {
-        Queue
+//        Queue
     }
 }
