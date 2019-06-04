@@ -8,6 +8,7 @@ package plain.Algorithms.DynamicProgramming;
  *  to find the length of the longest subsequence of a given sequence such that all elements of the subsequence
  *  are sorted in increasing order. For example, the length of LIS for {10, 22, 9, 33, 21, 50, 41, 60, 80} is 6
  *  and LIS is {10, 22, 33, 50, 60, 80}.
+ *  关键点：分布求以任意一个作为递增序列尾部的长度，求最大长度，f(n)=max(for len[i]<len[n] 1+f(i))
  */
 public class LongestIncreasingSubsequence {
     public static void main(String[] args) {

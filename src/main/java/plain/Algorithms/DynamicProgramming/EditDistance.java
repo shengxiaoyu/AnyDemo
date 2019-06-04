@@ -10,6 +10,9 @@ package plain.Algorithms.DynamicProgramming;
     Insert
     Remove
     Replace
+    关键点：将两个字符串长度为n从后往前一个一个字符考虑，两种递进情况：
+    1、f(n,n)=f(n-1,n-1)最后字符相同
+    2、f(n,n)=min(f(n,n-1)+1,f(n-1,n)+1,f(n-1,n-1)+1)分别代表针对第一个字符串插入，移除，替代三种方式
  */
 public class EditDistance {
     public static void main(String[] args) {

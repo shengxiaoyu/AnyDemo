@@ -10,6 +10,8 @@ package plain.Algorithms.DynamicProgramming;
  * respectively. Also given an integer W which represents knapsack capacity, find out the maximum value subset of val[] such that
  * sum of the weights of this subset is smaller than or equal to W. You cannot break an item, either pick the complete item, or
  * don’t pick it (0-1 property).
+ * 背包问题：
+ * 关键点在于：每次是否将一个物品放入背包，f(n,m)=Max(f(n-weigth[m],m-1)+val[m],f(n,m-1))
  */
 public class KnapsackProblem {
     public static void main(String[] args) {

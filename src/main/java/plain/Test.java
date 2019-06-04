@@ -2,6 +2,7 @@ package plain;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author 13314409603@163.com
@@ -31,10 +32,17 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        System.out.println(romanToInt("III"));
+        int i1 = 128 ;
+        Integer i2 = Integer.valueOf(i1) ;
+        Integer i3 = 128 ;
+        Integer i4 = new Integer(128) ;
+        System.out.println(i2==i3);
+        System.out.println(i2==i4);
+//        System.out.println(romanToInt("III"));
     }
     public static int romanToInt(String s) {
         Map<Character,Integer> map= new HashMap<>() ;
+//        new ConcurrentHashMap<>()
         map.put('M',1000) ;
         map.put('D',500) ;
         map.put('C',100) ;

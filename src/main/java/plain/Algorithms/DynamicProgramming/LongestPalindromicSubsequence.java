@@ -7,7 +7,9 @@ package plain.Algorithms.DynamicProgramming;
  * @Description
  * Given a sequence, find the length of the longest palindromic subsequence in it.
  * if the given sequence is “BBABCBCAB”, then the output should be 7 as “BABCBAB” is the longest palindromic subseuqnce in it.
- * “BBBBB” and “BBCBB” are also palindromic subsequences of the given sequence, but not the longest ones.
+ * “BBBBB” and “BBCBB” are also palindromic subsequences of the given sequence, but not the longest ones.'
+ * 关键点：针对回文则考虑当首尾字符相同时，则长度+2，若是不同则分别考虑去掉第一个或是最后一个的长度情况
+ * f(0,n)=2+f(1,n-1)首尾相同，或者f(0,n)=max(f(1,n),f(0,n-1))
  */
 public class LongestPalindromicSubsequence {
     public static void main(String[] args){

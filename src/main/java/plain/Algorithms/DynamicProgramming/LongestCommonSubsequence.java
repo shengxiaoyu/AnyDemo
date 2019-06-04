@@ -8,6 +8,8 @@ package plain.Algorithms.DynamicProgramming;
  * Given two sequences, find the length of longest subsequence present in both of them.
  * LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
  *  LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.
+ *  关键点：在于对于char数组m,n长度，从最后一个字符开始判断，如果相同则f(m,n)=1+f(m-1,n-1),如果不同则考虑舍掉第一个字符串的末尾还是
+ *  舍掉第二个字符串的末尾。所有有f(m,n)=max(f(m-1,n),f(m,n-1)).针对末尾字符分情况讨论
  */
 public class LongestCommonSubsequence {
     public static void main(String[] args) {

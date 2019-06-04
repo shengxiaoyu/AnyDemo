@@ -12,6 +12,9 @@ package plain.Algorithms.DynamicProgramming;
 length   | 1   2   3   4   5   6   7   8
 --------------------------------------------
 price    | 1   5   8   9  10  17  17  20
+ 关键点：对于总长n，和每种切割长度的价格列表prices，也是考虑结果集中是否有第i中切割长度。f(n,m)=Max(f(n,m-1),f(n-m,m)+prices[m]) n>m
+
+ 思路二：总长n，不同切割点，f(n) = Max(f(1)+prices[m-1],f(2)+price[m-2],...,f(n))
  */
 public class CuttingARod {
     public static void main(String[] args) {

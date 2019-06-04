@@ -5,6 +5,13 @@ package plain.Algorithms.DynamicProgramming;
  * @date 2019/1/11
  * @time 19:04
  * @Description
+ *
+ * Given an array arr[0 … n-1] containing n positive integers, a subsequence of arr[] is called Bitonic if it is first
+ * increasing, then decreasing. Write a function that takes an array as argument and returns the length of the longest
+ * bitonic subsequence.
+A sequence, sorted in increasing order is considered Bitonic with the decreasing part as empty. Similarly, decreasing
+order sequence is considered Bitonic with the increasing part as empty.
+    关键点：相当于最长（递增序列+递减序列），分情况考虑将任意一点作为转折点，左边为递增，右边递减
  */
 public class LongestBitonicSubsequence {
     public static void main(String[] args) {

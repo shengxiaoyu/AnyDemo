@@ -11,6 +11,8 @@ package plain.Algorithms.DynamicProgramming;
  * For example, for N = 4 and S = {1,2,3}, there are four solutions: {1,1,1,1},{1,1,2},{2,2},{1,3}. So output should be 4.
  * For N = 10 and S = {2, 5, 3, 6}, there are five solutions: {2,2,2,2,2}, {2,2,3,3}, {2,2,6}, {2,3,5} and {5,5}.
  * So the output should be 5.
+ * 关键点：对于N和可选零钱数组S(i~m),通过考虑m项有没有被加入结果集，以及加入的次数，所以f(n,m) = f(n,m-1)+f(n-m,m-1)+f(n-2m,m-1)...n>=m*x
+ *                                                                                    =f(n,m-1)+f(n-m,m) n>=m
  */
 public class CoinChange {
     public static void main(String[] args) {
@@ -28,8 +30,8 @@ public class CoinChange {
                 }else if(j==1){
                     tabu[i][j] = 1 ;
                 }else {
-                    tabu[i][j]=tabu[i][j-1] ;
-                    if(i>=S[j-1]){
+                    tabu[i][j]=tabu[i][j-1] ;//不使用j类硬币
+                    if(i>=S[j-1]){//使用不同次数的j类硬币,这里不减少为j-1，就相当于循环使用j类硬币，直到i<j
                         tabu[i][j]= tabu[i][j]+tabu[i-S[j-1]][j] ;
                     }
                 }

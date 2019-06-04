@@ -6,7 +6,8 @@ package plain.Algorithms.DynamicProgramming;
  * @time 9:49
  * @Description
  * The following is a description of the instance of this famous puzzle involving n=2 eggs and a building with k=36 floors.
-Suppose that we wish to know which stories in a 36-story building are safe to drop eggs from, and which will cause the eggs to break on landing. We make a few assumptions:
+Suppose that we wish to know which stories in a 36-story building are safe to drop eggs from, and which will cause the eggs to break
+on landing. We make a few assumptions:
 
 …..An egg that survives a fall can be used again.
 …..A broken egg must be discarded.
@@ -15,8 +16,15 @@ Suppose that we wish to know which stories in a 36-story building are safe to dr
 …..If an egg survives a fall then it would survive a shorter fall.
 …..It is not ruled out that the first-floor windows break eggs, nor is it ruled out that the 36th-floor do not cause an egg to break.
 
-If only one egg is available and we wish to be sure of obtaining the right result, the experiment can be carried out in only one way. Drop the egg from the first-floor window; if it survives, drop it from the second floor window. Continue upward until it breaks. In the worst case, this method may require 36 droppings. Suppose 2 eggs are available. What is the least number of egg-droppings that is guaranteed to work in all cases?
-The problem is not actually to find the critical floor, but merely to decide floors from which eggs should be dropped so that total number of trials are minimized
+If only one egg is available and we wish to be sure of obtaining the right result, the experiment can be carried out in only one way.
+Drop the egg from the first-floor window; if it survives, drop it from the second floor window. Continue upward until it breaks. In the
+worst case, this method may require 36 droppings. Suppose 2 eggs are available. What is the least number of egg-droppings that is guaranteed
+to work in all cases?
+The problem is not actually to find the critical floor, but merely to decide floors from which eggs should be dropped so that total number
+of trials are minimized
+ 最优解问题，假设楼高k，鸡蛋个数n,把最坏情况当场实验次数，比如只有一个鸡蛋，那就是楼高，多个鸡蛋的时候，选择任意楼层i放下鸡蛋，如果鸡蛋坏了就说明要在小于i的楼层测，
+    如果鸡蛋没坏，则要在i楼上测，此时实验次数应该为f(i,n)=1+max(f(i-1,n-1),f(k-i,n)).但是选择的这个i又可能影响结果，所以又要在最外层嵌套一个max取i为多少时有最小值
+ 关键点：
  */
 public class EggDroppingPuzzle {
     public static void main(String[] args) {

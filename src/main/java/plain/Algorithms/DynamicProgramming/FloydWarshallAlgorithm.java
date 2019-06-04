@@ -8,7 +8,7 @@ package plain.Algorithms.DynamicProgramming;
  */
 public class FloydWarshallAlgorithm {
 
-    /**
+    /**最短路径Floyd算法
      * 动态规划Floyd算法
      * 设图G中n 个顶点的编号为1到n。令c [i, j, k]表示从i 到j 的最短路径的长度，其中k 表示该路径中的最大顶点，也就是说c[i,j,k]这条最
      * 短路径所通过的中间顶点最大不超过k。因此，如果G中包含边<i, j>，则c[i, j, 0] =边<i, j> 的长度；若i= j ，则c[i,j,0]=0；如果G中不
@@ -31,6 +31,8 @@ public class FloydWarshallAlgorithm {
                 }
             }
         }
+        //在最外层包裹中转城市，而且从0开始，则往后就表示多次中转。
+        //也可以理解为第一次只有一个城市可用于中转，第二次有两个城市可作为中转。。。
         for(int k=0;k<n;k++){
             for(int i=0;i<n;i++){
                 for(int j=0;j<n;j++){
