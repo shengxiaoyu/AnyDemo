@@ -1,3 +1,3 @@
 # AnyDemo
-some practice:
-algorithms,reading demo,Utils
+一些编程笔记
+算法、工具包、特性测试等
