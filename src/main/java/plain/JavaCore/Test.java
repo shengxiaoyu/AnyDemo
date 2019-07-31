@@ -1,7 +1,9 @@
 package plain.JavaCore;
 
 import java.util.Arrays;
+import java.util.BitSet;
 import java.util.List;
+import java.util.Vector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -13,10 +15,9 @@ import java.util.stream.Stream;
  */
 public class Test {
     public static void main(String[] args){
-        String[]  array = new String[]{"11","22","33"} ;
-        List<String> strings = Arrays.asList(array);
-        Stream<Employee> employeeStream = strings.stream().map(Employee::new);
-        List<Employee> collect = employeeStream.collect(Collectors.toList());
-        System.out.println(Arrays.toString(collect.toArray()));
+        System.out.println(1.0/0);
+        System.out.println(1^1);
+        Integer i = 1 ;
+        BitSet bitSet = new BitSet() ;
     }
 }

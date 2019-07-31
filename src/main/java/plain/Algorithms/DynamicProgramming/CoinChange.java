@@ -31,8 +31,8 @@ public class CoinChange {
                     tabu[i][j] = 1 ;
                 }else {
                     tabu[i][j]=tabu[i][j-1] ;//不使用j类硬币
-                    if(i>=S[j-1]){//使用不同次数的j类硬币,这里不减少为j-1，就相当于循环使用j类硬币，直到i<j
-                        tabu[i][j]= tabu[i][j]+tabu[i-S[j-1]][j] ;
+                    if(i>=S[j]){//使用不同次数的j类硬币,这里不减少为j-1，就相当于循环使用j类硬币，直到i<j
+                        tabu[i][j]= tabu[i][j]+tabu[i-S[j]][j] ;
                     }
                 }
             }

@@ -22,7 +22,7 @@ public class BinomialCoefficient {
     public static int bc(int n,int k){
         int[][] tabu = new int[n+1][k+1] ;
         for(int i=0;i<n+1;i++){
-            for(int j=0;j<k+1;j++){
+            for(int j=0;j<k+1&&j<=i;j++){
                 if(i==j||j==0) {
                     tabu[i][j] = 1;
                 }else if(i==0||i<j){

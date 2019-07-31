@@ -35,11 +35,13 @@ public class EditDistance {
                     tabu[i][j] = i ;
                     continue;
                 }
-                if(char1[i-1]==char2[j-1]){
-                    tabu[i][j]=tabu[i-1][j-1] ;
+                int d = 0 ;
+                if(char1[i-1]==char2[j-1]){//错误，即使相同了，也不能保证直接匹配是最好的结果
+                    d = 0  ;
                 }else {
-                    tabu[i][j]=Math.min(tabu[i-1][j]+1,Math.min(tabu[i][j-1]+1,tabu[i-1][j-1]+1)) ;
+                    d = 1 ;
                 }
+                tabu[i][j]=Math.min(tabu[i-1][j]+1,Math.min(tabu[i][j-1]+1,tabu[i-1][j-1]+d)) ;
             }
         }
         return tabu[m][n] ;

@@ -10,7 +10,7 @@ import java.nio.channels.*;
  * @time 16:59
  * @Description
  */
-public class BufferTest {
+public class  BufferTest {
     public static void main(String[] args) {
         try {
             RandomAccessFile afile = new RandomAccessFile("E://test.txt","rw") ;

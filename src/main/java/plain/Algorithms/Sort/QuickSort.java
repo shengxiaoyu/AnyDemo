@@ -5,7 +5,7 @@ package plain.Algorithms.Sort;
  * @date 2019/3/17
  * @time 18:25
  * @Description 快速排序
- * 优化：1、当已经排好序时，取第一个或是最后一个做base都回退化，所有取用第一个、中间个、最后一个三个值的中间值作为base
+ * 优化：1、当已经排好序时，取第一个或是最后一个做base都回退化，所以取用第一个、中间个、最后一个三个值的中间值作为base
  * 2、当待排序长度小于阈值时，直接使用插入排序
  */
 public class QuickSort extends AbstractSort {

@@ -11,4 +11,17 @@ public interface InterfaceTest {
     {
         return "interface" ;
     }
+    static int getName(){
+        int x = 1 ;
+        try {
+            x = 2 ;
+            return x ;
+        }finally {
+            x = 3 ;
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(InterfaceTest.getName());
+    }
 }

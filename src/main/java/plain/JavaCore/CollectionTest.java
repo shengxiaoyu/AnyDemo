@@ -2,6 +2,7 @@ package plain.JavaCore;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.function.ToIntFunction;
 
 /**
  * @author 13314409603@163.com
@@ -12,15 +13,30 @@ import java.util.*;
 public class CollectionTest {
 
     public static void main(String[] args) {
-        viewTest();
+//        viewTest();
+        int i = 3 ;
+        System.out.println(i<<2);
+        System.out.println(i&2);
     }
     public static void queueTest(){
         List<Integer> list = new ArrayList() ;
-        Iterator iterator = list.iterator();
+        Iterator iterator = ((ArrayList) list).iterator();
+
+        ArrayList<Integer> l = new ArrayList<>() ;
+        list.sort(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return 0;
+
+            }
+        });
+        String  s1 = "das" ;
 //        Iterator iterator2 = list.iterator();
         list.add(1) ;
         list.add(2) ;
         list.add(3) ;
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>() ;
+        result.sort(Comparator.comparingInt((ToIntFunction<ArrayList>) ArrayList::size));
         while (iterator.hasNext()){
             System.out.println(iterator.next());
 //            iterator2.remove();
